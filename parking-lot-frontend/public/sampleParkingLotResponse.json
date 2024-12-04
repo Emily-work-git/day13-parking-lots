@@ -1,0 +1,32 @@
+{
+    "content": [
+        {
+          "parkingLotId": "cf075544-6ef0-4af5-9040-99958e539f68",
+          "capacity": 10,
+          "cars": [
+            {
+              "plateNumber": "ab-1234",
+              "position": 1
+            },
+            {
+              "plateNumber": "cd-5678",
+              "position": 2
+            }
+          ]
+        },
+        {
+          "parkingLotId": "df075544-6ef0-4af5-9040-99958e539f69",
+          "capacity": 20,
+          "cars": [
+            {
+              "plateNumber": "ef-1234",
+              "position": 1
+            },
+            {
+              "plateNumber": "gh-5678",
+              "position": 2
+            }
+          ]
+        }
+    ]
+}
