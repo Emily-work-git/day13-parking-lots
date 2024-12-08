@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Select, Button, message, Typography } from 'antd';
 import axios from 'axios';
-import { fetchParkingStrategy } from '../api/parkingLot';
+import { fetchCar, fetchParkingStrategy } from '../api/parkingLot';
+import { parkCar } from '../api/parkingLot';
 
 const { Option } = Select;
 
@@ -18,7 +19,21 @@ export default function ParkingComponent() {
 
     const handlePark = () => { 
         console.log(plateNumber, parkingStrategy);
+        parkCar(parkingStrategy, plateNumber)
+        .then((data) => {
+            message.success('Car parked successfully');
+            console.log(data);
+        });
     }
+
+    const handleFetch = () => {
+        console.log(plateNumber);
+        fetchCar(plateNumber)
+        .then((data) => {
+            message.success('Car fetched successfully');
+            console.log(data);
+        });
+    };
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: "1vw"}}>
@@ -43,6 +58,9 @@ export default function ParkingComponent() {
             </Select>
             <Button type="primary" onClick={handlePark}>
                 Park
+            </Button>
+            <Button type="primary" onClick={handleFetch}>
+                Fetch
             </Button>
         </div>
     );
