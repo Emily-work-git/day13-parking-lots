@@ -1,13 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import ParkingComponent from './components/ParkingComponent';
+import Parking from './components/Parking';
+import { ParkingProvider } from './reducer/reducer';
 
 function App() {
   return (
     <div className="App" style={{ margin: '20px' }}>
-      <ParkingComponent />
+      <ParkingProvider>
+        <Parking/>
+      </ParkingProvider>
     </div>
+    
   );
 }
+
+
 
 export default App;
