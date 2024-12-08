@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Input, Select, Button, message, Typography } from "antd";
-import axios from "axios";
-import { fetchCar, fetchParkingStrategy } from "../api/parkingLot";
-import { parkCar } from "../api/parkingLot";
-import { park, fetch } from "../reducer/reducer";
-import { useParking } from "../reducer/reducer";
-import ParkingLots from "./ParkingLots";
+import { Button, Input, message, Select, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { fetchCar, fetchParkingStrategy, parkCar } from "../api/parkingLot";
+import { fetch, park, useParking } from "../reducer/reducer";
 
 const { Option } = Select;
 const validatePlateNumberMessage =
@@ -77,6 +73,7 @@ export default function ParkingComponent() {
 
   useEffect(() => console.log("state:", state), [state]);
 
+  
   return (
     <>
       <div
